@@ -26,6 +26,7 @@ public class PadesSignatureExpressController {
 	@GetMapping
 	public String get(@RequestParam(value = "fileId") String fileToSign) throws IOException {
 
+
 		// Verify if the fileToSign exists.
 		if (fileToSign == null || !StorageMock.exists(fileToSign)) {
 			throw new FileNotFoundException();

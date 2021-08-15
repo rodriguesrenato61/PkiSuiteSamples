@@ -1,10 +1,12 @@
 package com.lacunasoftware.pkisuite.controller;
 
 import com.lacunasoftware.pkisuite.util.StorageMock;
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -50,4 +52,5 @@ public class UploadController {
 		}
 		return String.format("redirect:/%s?fileId=%s", rc, fileId);
 	}
+
 }

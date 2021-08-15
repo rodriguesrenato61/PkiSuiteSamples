@@ -16,7 +16,7 @@ public class ValidateFileRestCoreController {
 	/**
 	 * This action validates the file uploaded to REST PKI Core.
 	 */
-	@RequestMapping(value = "/validate-file-rest-core", method = { RequestMethod.POST })
+	/*@RequestMapping(value = "/validate-file-rest-core", method = { RequestMethod.POST })
 	public ResponseEntity<ValidateFileResponse> post(
 		@RequestBody ValidateFileRequest request
 	) {
@@ -46,5 +46,5 @@ public class ValidateFileRestCoreController {
 		}
 
 		return new ResponseEntity<ValidateFileResponse>(response, HttpStatus.ACCEPTED);
-	}
+	}*/
 }

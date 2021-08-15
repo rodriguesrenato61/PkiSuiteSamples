@@ -21,16 +21,16 @@ public class WebhookRestCoreController {
 	 * Due to the limitations of Spring's serializer, this method has the
 	 * responsibility of deserializing the model received in the request.
 	 */
-	public WebhookEventModel deserializeWebhookEvent(HttpServletRequest request) throws IOException {
+	/*public WebhookEventModel deserializeWebhookEvent(HttpServletRequest request) throws IOException {
 		String body = IOUtils.toString(request.getReader());
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.readValue(body, WebhookEventModel.class);
-	}
+	}*/
 
 	/**
 	 * This action receives the REST PKI Core's webhook event notification.
 	 */
-	@RequestMapping(value = "/webhook-rest-core", method = { RequestMethod.POST })
+	/*@RequestMapping(value = "/webhook-rest-core", method = { RequestMethod.POST })
 	public ResponseEntity<Object> post(HttpServletRequest request) {
 		try {
 			// Get WebhookEventModel instance from body - JSON.
@@ -59,5 +59,5 @@ public class WebhookRestCoreController {
 		} catch (Exception e) {
 			return ResponseEntity.accepted().build();
 		}
-	}
+	}*/
 }

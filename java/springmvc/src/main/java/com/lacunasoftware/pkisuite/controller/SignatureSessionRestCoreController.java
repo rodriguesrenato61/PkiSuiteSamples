@@ -20,7 +20,7 @@ public class SignatureSessionRestCoreController {
 	 *
 	 * This action initiates a signature session with REST PKI Core.
 	 */
-	@GetMapping("/signature-session-rest-core")
+	/*@GetMapping("/signature-session-rest-core")
 	public String get(Model model, HttpServletResponse response) throws RestException {
 
 		RestPkiService service = RestPkiServiceFactory.getService(Util.getRestPkiCoreOptions());
@@ -33,14 +33,14 @@ public class SignatureSessionRestCoreController {
 		// Render the signature-session-rest-core page (templates/signature-session-rest-core/index.html).
 		model.addAttribute("redirectUrl", sessionResponse.getRedirectUrl());
 		return "signature-session-rest-core/index";
-	}
+	}*/
 
 	/**
 	 * GET /signature-session-rest-core/webhook
 	 *
 	 * This action initiates a signature session with REST PKI Core using webhook.
 	 */
-	@GetMapping("/signature-session-rest-core/webhook")
+	/*@GetMapping("/signature-session-rest-core/webhook")
 	public String usingWebhook(Model model, HttpServletResponse response) throws RestException {
 
 		RestPkiService service = RestPkiServiceFactory.getService(Util.getRestPkiCoreOptions());
@@ -53,7 +53,7 @@ public class SignatureSessionRestCoreController {
 		// Render the signature-session-rest-core page (templates/signature-session-rest-core/index.html).
 		model.addAttribute("redirectUrl", sessionResponse.getRedirectUrl());
 		return "signature-session-rest-core/index";
-	}
+	}*/
 
 	/**
 	 * GET /ignature-session-rest-core/complete
@@ -61,7 +61,7 @@ public class SignatureSessionRestCoreController {
 	 * This action receives the form submission from the view. We'll call REST PKI to validate the
 	 * authentication.
 	 */
-	@GetMapping("/signature-session-rest-core/complete")
+	/*@GetMapping("/signature-session-rest-core/complete")
 	public String complete(
 		Model model,
 		@RequestParam(value="signatureSessionId") String sessionId
@@ -83,5 +83,5 @@ public class SignatureSessionRestCoreController {
 		}
 		// Render the signature-session-rest-core page (templates/signature-session-rest-core/complete.html).
 		return "signature-session-rest-core/complete";
-	}
+	}*/
 }
