@@ -1,6 +1,7 @@
 package com.lacunasoftware.pkisuite.controller;
 
-import com.lacunasoftware.pkisuite.util.Arquivo;
+import com.lacunasoftware.pkisuite.dto.UploadPdfPkiExpressDTO;
+import com.lacunasoftware.pkisuite.dto.UploadPdfPkiExpressResponseDTO;
 import com.lacunasoftware.pkisuite.util.StorageMock;
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,17 +21,16 @@ public class UploadController2 {
             consumes = "application/json",
             produces = 	"application/json"
     )
-    public Arquivo uploadJson(
-            @RequestBody Arquivo arquivo
+    public UploadPdfPkiExpressResponseDTO uploadJson(
+            @RequestBody UploadPdfPkiExpressDTO request
     ) throws IOException {
-        byte[] docBytes = Base64.decodeBase64(arquivo.getBase64Encode());
+        byte[] docBytes = Base64.decodeBase64(request.getBase64Encode());
         InputStream fileStream = new ByteArrayInputStream(docBytes);
-        String originalFilename = arquivo.getFilename();
+        String originalFilename = request.getFilename();
         String fileId = StorageMock.store(fileStream, null, originalFilename);
-        Arquivo response = new Arquivo();
+        UploadPdfPkiExpressResponseDTO response = new UploadPdfPkiExpressResponseDTO();
         response.setFileId(fileId);
-        response.setBase64Encode("");
-        response.setFilename(arquivo.getFilename());
+       
         return response;
     }
 

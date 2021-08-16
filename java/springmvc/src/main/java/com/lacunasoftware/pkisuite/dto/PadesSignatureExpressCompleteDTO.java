@@ -1,6 +1,5 @@
 package com.lacunasoftware.pkisuite.dto;
 
-import org.springframework.web.bind.annotation.RequestParam;
 
 public class PadesSignatureExpressCompleteDTO {
 
